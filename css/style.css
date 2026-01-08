@@ -57,7 +57,7 @@ h1, h2, h3, h4, h5, .btn {
 
 /* HERO SECTION (KAPAK BÖLÜMÜ) */
 .hero-section {
-    background: linear-gradient(rgba(0, 51, 204, 0.7), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1516627145497-ae6968895b74?ixlib=rb-4.0.3&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1600');
+    background: linear-gradient(rgba(0, 51, 204, 0.7), rgba(0, 0, 0, 0.6)), url('../img/hero-bg.png');
     
     background-size: cover;
     background-position: center center; /* Fotoğrafın tam ortasına odaklansın */
