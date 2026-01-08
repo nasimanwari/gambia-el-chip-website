@@ -1,0 +1,90 @@
+/* GENEL AYARLAR */
+body {
+    font-family: 'Open Sans', sans-serif;
+    color: #333;
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, .btn {
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* MARKA RENKLERİ (LOGOYA GÖRE) */
+:root {
+    --brand-blue: #0033CC;  /* Güven - Footer ve Başlıklar */
+    --brand-red: #E60000;   /* Aciliyet - Butonlar */
+    --brand-green: #00CC00; /* Umut - İkonlar ve Başarılar */
+    --brand-dark: #1A1A1A;  /* Metin */
+}
+
+/* ÖZEL TASARIM SINIFLARI */
+.text-brand-blue { color: var(--brand-blue) !important; }
+.text-brand-red { color: var(--brand-red) !important; }
+.text-brand-green { color: var(--brand-green) !important; }
+
+/* BUTON TASARIMLARI */
+.btn-donate {
+    background-color: var(--brand-red);
+    color: white;
+    font-weight: 700;
+    padding: 12px 30px;
+    border-radius: 50px; /* Modern yuvarlak buton */
+    box-shadow: 0 4px 15px rgba(230, 0, 0, 0.3); /* Hafif gölge */
+    transition: all 0.3s ease;
+    border: none;
+}
+
+.btn-donate:hover {
+    background-color: #cc0000;
+    transform: translateY(-2px); /* Üzerine gelince hafif yukarı kalksın */
+    box-shadow: 0 6px 20px rgba(230, 0, 0, 0.4);
+    color: white;
+}
+
+/* NAVBAR AYARLARI */
+.navbar {
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05); /* Menü altı hafif gölge */
+}
+.nav-link {
+    font-weight: 600;
+    color: var(--brand-dark) !important;
+}
+.nav-link.active {
+    color: var(--brand-blue) !important;
+}
+
+/* HERO SECTION (KAPAK) */
+.hero-section {
+    /* Arkaplana şimdilik internetten bir Gambia okulu görseli koyuyoruz */
+    background: linear-gradient(rgba(0, 51, 204, 0.8), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1489710437720-ebb67ec84dd2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 150px 0 100px 0;
+    clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%); /* Modern çapraz kesim efekti */
+}
+
+/* KARTLAR (PROJELER) */
+.feature-card {
+    border: none;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+    background: white;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+.feature-card:hover {
+    transform: translateY(-10px); /* Kart havaya kalksın */
+    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+}
+.icon-box {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    background-color: rgba(0, 204, 0, 0.1); /* Yeşil'in şeffaf hali */
+    color: var(--brand-green);
+    font-size: 2rem;
+}
