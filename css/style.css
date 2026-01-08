@@ -1,6 +1,10 @@
 /* --- style.css --- */
 
 /* GENEL AYARLAR */
+html {
+    scroll-behavior: smooth; /* İŞTE SİHİRLİ KOD BU */
+}
+
 body {
     font-family: 'Open Sans', sans-serif;
     color: #333;
