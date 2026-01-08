@@ -57,12 +57,12 @@ h1, h2, h3, h4, h5, .btn {
 
 /* HERO SECTION (KAPAK BÖLÜMÜ) */
 .hero-section {
-    /* Arkaplana şimdilik temsili bir Afrika okulu görseli koyuyoruz */
-    background: linear-gradient(rgba(0, 51, 204, 0.8), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1489710437720-ebb67ec84dd2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');
+    background: linear-gradient(rgba(0, 51, 204, 0.7), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1516627145497-ae6968895b74?ixlib=rb-4.0.3&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1600');
+    
     background-size: cover;
-    background-position: center;
+    background-position: center center; /* Fotoğrafın tam ortasına odaklansın */
     color: white;
-    padding: 160px 0 100px 0;
+    padding: 180px 0 120px 0; /* Biraz daha genişlettik ki fotoğraf daha iyi görünsün */
     /* Modern Tasarım Dokunuşu: Alt kısmı çapraz kesiyoruz */
     clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
 }
