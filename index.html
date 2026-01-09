@@ -12,19 +12,24 @@
     <link rel="icon" href="img/logo.jpg" type="image/jpeg">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-
     <link rel="stylesheet" href="css/style.css">
     
     <style>
-        /* Swiper Oklarının Rengini Markaya Uydurma (Kırmızı) */
         :root { --swiper-theme-color: #E60000 !important; }
         .swiper-pagination-bullet-active { background-color: #E60000 !important; }
+        
+        /* Kartlar için Hover Efekti */
+        .hover-effect { transition: transform 0.3s ease; }
+        .hover-effect:hover { transform: translateY(-5px); }
+        .transform-scale { transform: scale(1.05); border: 2px solid #E60000; z-index: 10; } /* Ortadaki kart */
+        
+        /* Mobilde kartın taşmaması için */
+        @media (max-width: 768px) {
+            .transform-scale { transform: scale(1); border: 1px solid #E60000; margin-top: 20px; margin-bottom: 20px;}
+        }
     </style>
 </head>
 <body>
@@ -72,7 +77,7 @@
                         <a href="#proyectos" class="btn btn-light btn-lg rounded-pill px-5 fw-bold text-brand-blue">
                             Ver Proyectos
                         </a>
-                        <a href="https://www.teaming.net/gambiaelchip-grupo" target="_blank" class="btn btn-outline-light btn-lg rounded-pill px-5 fw-bold">
+                        <a href="#colabora" class="btn btn-outline-light btn-lg rounded-pill px-5 fw-bold">
                             Únete (1€/mes)
                         </a>
                     </div>
@@ -169,47 +174,172 @@
         </div>
     </section>
 
-    <section class="py-5 bg-light" id="contacto">
+    <section class="py-5 bg-white" id="video">
         <div class="container py-5">
-            <div class="text-center mb-5">
-                <h2 class="fw-bold display-6">Síguenos en Instagram</h2>
-                <p class="text-muted">Mira nuestro trabajo diario en @gambiaelchip</p>
-                <a href="https://www.instagram.com/gambiaelchip/" target="_blank" class="btn btn-outline-primary rounded-pill px-4">
-                    <i class="fa-brands fa-instagram me-2"></i> Seguir
-                </a>
+            <div class="row justify-content-center text-center mb-4">
+                <div class="col-lg-8">
+                    <span class="text-brand-red fw-bold text-uppercase">Nuestra Realidad</span>
+                    <h2 class="display-5 fw-bold mb-3">Una imagen vale más que mil palabras</h2>
+                    <p class="lead text-muted">
+                        Así es un día en la escuela "The Lemon Tree". Tu ayuda se transforma en estas sonrisas.
+                    </p>
+                </div>
             </div>
 
-            <div class="row justify-content-center mb-5">
-                <div class="col-md-8 text-center">
-                    <div class="p-5 border border-dashed rounded bg-white text-muted">
-                        <i class="fa-brands fa-instagram fa-3x mb-3 text-muted opacity-50"></i>
-                        <p>El feed de Instagram aparecerá aquí...</p>
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="ratio ratio-16x9 shadow-lg rounded-4 overflow-hidden" style="border: 4px solid #fff;">
+                        <iframe src="https://www.youtube.com/embed/ysz5S6PUM-U?rel=0" title="YouTube video" allowfullscreen></iframe>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5 bg-light" id="colabora">
+        <div class="container py-5">
+            <div class="text-center mb-5">
+                <h2 class="display-5 fw-bold text-brand-blue">¿Cómo puedes ayudar?</h2>
+                <p class="lead text-muted">Elige el impacto que quieres tener hoy en la vida de un niño.</p>
             </div>
 
             <div class="row g-4">
                 <div class="col-md-4">
-                    <div class="p-4 bg-white shadow-sm rounded text-center h-100">
-                        <i class="fa-solid fa-envelope text-brand-red fa-2x mb-3"></i>
-                        <h4 class="fw-bold h5">Email</h4>
-                        <p class="text-muted mb-0">gambiaelchip@gmail.com</p>
+                    <div class="card h-100 border-0 shadow-sm rounded-4 text-center overflow-hidden hover-effect">
+                        <div class="card-header bg-brand-blue text-white py-4">
+                            <h4 class="fw-bold m-0">Micro-Donación</h4>
+                        </div>
+                        <div class="card-body p-4">
+                            <h1 class="display-4 fw-bold text-brand-blue">1€<small class="fs-6 text-muted">/mes</small></h1>
+                            <ul class="list-unstyled mt-4 mb-4 text-start">
+                                <li class="mb-2"><i class="fa-solid fa-check text-brand-green me-2"></i> Únete a nuestro grupo Teaming</li>
+                                <li class="mb-2"><i class="fa-solid fa-check text-brand-green me-2"></i> Menos que un café</li>
+                                <li class="mb-2"><i class="fa-solid fa-check text-brand-green me-2"></i> Ayuda constante y segura</li>
+                            </ul>
+                            <a href="https://www.teaming.net/gambiaelchip-grupo" target="_blank" class="btn btn-outline-primary w-100 rounded-pill fw-bold">Unirse al Grupo</a>
+                        </div>
                     </div>
                 </div>
+
                 <div class="col-md-4">
-                    <div class="p-4 bg-white shadow-sm rounded text-center h-100">
-                        <i class="fa-solid fa-location-dot text-brand-blue fa-2x mb-3"></i>
-                        <h4 class="fw-bold h5">Sede</h4>
-                        <p class="text-muted mb-0">Cartagena, Murcia, España</p>
+                    <div class="card h-100 border-0 shadow-lg rounded-4 text-center overflow-hidden transform-scale">
+                        <div class="card-header bg-brand-red text-white py-4 position-relative">
+                            <span class="badge bg-warning text-dark position-absolute top-0 end-0 m-2">Más Popular</span>
+                            <h4 class="fw-bold m-0">Material Escolar</h4>
+                        </div>
+                        <div class="card-body p-4">
+                            <h1 class="display-4 fw-bold text-brand-red">20€</h1>
+                            <p class="text-muted">Donación Puntual</p>
+                            <ul class="list-unstyled mt-4 mb-4 text-start">
+                                <li class="mb-2"><i class="fa-solid fa-check text-brand-green me-2"></i> Libros y cuadernos</li>
+                                <li class="mb-2"><i class="fa-solid fa-check text-brand-green me-2"></i> Mochila escolar</li>
+                                <li class="mb-2"><i class="fa-solid fa-check text-brand-green me-2"></i> Material de escritura</li>
+                            </ul>
+                            <a href="https://www.teaming.net/gambiaelchip-grupo" target="_blank" class="btn btn-donate w-100 rounded-pill fw-bold">Donar</a>
+                        </div>
                     </div>
                 </div>
+
                 <div class="col-md-4">
-                    <div class="p-4 bg-white shadow-sm rounded text-center h-100">
-                        <i class="fa-solid fa-hand-holding-heart text-brand-green fa-2x mb-3"></i>
-                        <h4 class="fw-bold h5">Hazte Socio</h4>
-                        <p class="text-muted">Teaming Group</p>
-                        <a href="https://www.teaming.net/gambiaelchip-grupo" class="small fw-bold text-decoration-none">Unirse ahora &rarr;</a>
+                    <div class="card h-100 border-0 shadow-sm rounded-4 text-center overflow-hidden hover-effect">
+                        <div class="card-header bg-brand-green text-white py-4">
+                            <h4 class="fw-bold m-0">Nutrición Completa</h4>
+                        </div>
+                        <div class="card-body p-4">
+                            <h1 class="display-4 fw-bold text-brand-green">50€</h1>
+                            <p class="text-muted">Donación Puntual</p>
+                            <ul class="list-unstyled mt-4 mb-4 text-start">
+                                <li class="mb-2"><i class="fa-solid fa-check text-brand-green me-2"></i> Comida para una clase</li>
+                                <li class="mb-2"><i class="fa-solid fa-check text-brand-green me-2"></i> Saco de arroz (50kg)</li>
+                                <li class="mb-2"><i class="fa-solid fa-check text-brand-green me-2"></i> Aceite y verduras</li>
+                            </ul>
+                            <a href="https://www.teaming.net/gambiaelchip-grupo" class="btn btn-outline-success w-100 rounded-pill fw-bold">Donar</a>
+                        </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5 bg-light" id="contacto">
+        <div class="container py-5">
+            <div class="row g-5">
+                
+                <div class="col-lg-6">
+                    <span class="text-brand-red fw-bold text-uppercase">Contacto</span>
+                    <h2 class="display-5 fw-bold mb-4">Ponte en contacto con nosotros</h2>
+                    <p class="lead text-muted mb-5">
+                        ¿Tienes dudas? ¿Quieres colaborar? Escríbenos y te responderemos lo antes posible.
+                    </p>
+                    
+                    <div class="d-flex mb-4">
+                        <div class="flex-shrink-0 btn-square bg-white shadow-sm rounded-circle d-flex align-items-center justify-content-center" style="width: 50px; height: 50px;">
+                            <i class="fa-solid fa-envelope text-brand-red"></i>
+                        </div>
+                        <div class="ms-3">
+                            <h5 class="fw-bold mb-1">Email</h5>
+                            <a href="mailto:gambiaelchip@gmail.com" class="text-muted text-decoration-none">gambiaelchip@gmail.com</a>
+                        </div>
+                    </div>
+
+                    <div class="d-flex mb-4">
+                        <div class="flex-shrink-0 btn-square bg-white shadow-sm rounded-circle d-flex align-items-center justify-content-center" style="width: 50px; height: 50px;">
+                            <i class="fa-solid fa-location-dot text-brand-blue"></i>
+                        </div>
+                        <div class="ms-3">
+                            <h5 class="fw-bold mb-1">Ubicación</h5>
+                            <p class="text-muted mb-0">Cartagena, Murcia, España</p>
+                        </div>
+                    </div>
+
+                    <div class="d-flex">
+                        <div class="flex-shrink-0 btn-square bg-white shadow-sm rounded-circle d-flex align-items-center justify-content-center" style="width: 50px; height: 50px;">
+                            <i class="fa-brands fa-instagram text-brand-red"></i>
+                        </div>
+                        <div class="ms-3">
+                            <h5 class="fw-bold mb-1">Instagram</h5>
+                            <a href="https://www.instagram.com/gambiaelchip/" target="_blank" class="text-muted text-decoration-none">@gambiaelchip</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="bg-white p-5 rounded-4 shadow-lg">
+                        <h4 class="fw-bold mb-4">Envíanos un mensaje</h4>
+                        
+                        <form action="https://formspree.io/f/maqqweyw" method="POST">
+                            
+                            <div class="row g-3">
+                                <div class="col-12">
+                                    <label class="form-label fw-bold">Nombre Completo</label>
+                                    <input type="text" name="name" class="form-control bg-light border-0 py-3" placeholder="Tu nombre" required>
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label fw-bold">Email</label>
+                                    <input type="email" name="email" class="form-control bg-light border-0 py-3" placeholder="tucorreo@ejemplo.com" required>
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label fw-bold">Asunto</label>
+                                    <select name="subject" class="form-select bg-light border-0 py-3">
+                                        <option value="Voluntariado">Quiero ser voluntario</option>
+                                        <option value="Donacion">Sobre donaciones</option>
+                                        <option value="Informacion">Información general</option>
+                                        <option value="Otro">Otro asunto</option>
+                                    </select>
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label fw-bold">Mensaje</label>
+                                    <textarea name="message" class="form-control bg-light border-0 py-3" rows="4" placeholder="Escribe tu mensaje aquí..." required></textarea>
+                                </div>
+                                <div class="col-12 mt-4">
+                                    <button type="submit" class="btn btn-donate w-100 py-3">
+                                        ENVIAR MENSAJE <i class="fa-solid fa-paper-plane ms-2"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                        </form>
+                        </div>
                 </div>
             </div>
         </div>
@@ -265,7 +395,6 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
     <script>
