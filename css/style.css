@@ -27,7 +27,7 @@ h1, h2, h3, h4, h5, .btn {
 .text-brand-red { color: var(--brand-red) !important; }
 .text-brand-green { color: var(--brand-green) !important; }
 
-/* ARKA PLAN SINIFLARI (KART BAŞLIKLARI İÇİN - YENİ EKLENDİ ✅) */
+/* ARKA PLAN SINIFLARI */
 .bg-brand-blue { background-color: var(--brand-blue) !important; color: white !important; }
 .bg-brand-red { background-color: var(--brand-red) !important; color: white !important; }
 .bg-brand-green { background-color: var(--brand-green) !important; color: white !important; }
