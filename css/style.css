@@ -13,27 +13,26 @@ h1, h2, h3, h4, h5, .btn {
     font-family: 'Montserrat', sans-serif;
 }
 
-/* MARKA RENKLERİ (LOGOYA GÖRE) */
+/* MARKA RENKLERİ */
 :root {
-    --brand-blue: #0033CC;  /* Güven - Footer ve Başlıklar */
-    --brand-red: #E60000;   /* Aciliyet - Butonlar */
-    --brand-green: #00CC00; /* Umut - İkonlar ve Başarılar */
-    --brand-dark: #1A1A1A;  /* Metin */
-    --swiper-theme-color: #E60000 !important; /* Galeri Okları */
+    --brand-blue: #0033CC;
+    --brand-red: #E60000;
+    --brand-green: #00CC00;
+    --brand-dark: #1A1A1A;
+    --swiper-theme-color: #E60000 !important;
 }
 
-/* RENK SINIFLARI (Metin İçin) */
+/* RENK VE ARKA PLAN SINIFLARI */
 .text-brand-blue { color: var(--brand-blue) !important; }
 .text-brand-red { color: var(--brand-red) !important; }
 .text-brand-green { color: var(--brand-green) !important; }
 
-/* ARKA PLAN SINIFLARI */
 .bg-brand-blue { background-color: var(--brand-blue) !important; color: white !important; }
 .bg-brand-red { background-color: var(--brand-red) !important; color: white !important; }
 .bg-brand-green { background-color: var(--brand-green) !important; color: white !important; }
 .bg-dark { background-color: var(--brand-dark) !important; }
 
-/* BUTON TASARIMLARI */
+/* BUTONLAR */
 .btn-donate {
     background-color: var(--brand-red);
     color: white;
@@ -74,18 +73,37 @@ h1, h2, h3, h4, h5, .btn {
     clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
 }
 
-/* PROJE KARTLARI */
-.feature-card {
+/* KART TASARIMLARI (DÜZELTME BURADA) */
+.feature-card, .card {
     border: none;
     border-radius: 15px;
     background: white;
     box-shadow: 0 10px 30px rgba(0,0,0,0.05);
     transition: all 0.3s ease;
+    overflow: hidden; /* Taşmayı engeller */
 }
-.feature-card:hover {
-    transform: translateY(-10px);
+
+.feature-card:hover, .card:hover {
+    transform: translateY(-5px);
     box-shadow: 0 15px 40px rgba(0,0,0,0.1);
 }
+
+/* Ürün Resimlerinin Patlamasını Engelleyen Kod */
+.product-img-container {
+    height: 180px;
+    overflow: hidden;
+    position: relative;
+    background-color: #f8f9fa;
+}
+
+.product-img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Resmi kesmeden kutuya sığdırır */
+    padding: 10px;
+}
+
+/* Diğer İkon ve Efektler */
 .icon-box {
     width: 80px;
     height: 80px;
@@ -97,63 +115,10 @@ h1, h2, h3, h4, h5, .btn {
     font-size: 2rem;
 }
 
-/* BAĞIŞ KARTLARI HOVER VE TAB EFEKTLERİ */
-.hover-effect { transition: transform 0.3s ease; }
-.hover-effect:hover { transform: translateY(-5px); }
-.transform-scale { transform: scale(1.05); border: 2px solid #E60000; z-index: 10; }
-
-@media (max-width: 768px) {
-    .transform-scale { transform: scale(1); border: 1px solid #E60000; margin-top: 20px; margin-bottom: 20px;}
-}
-
-/* BAĞIŞ TAB BUTONLARI */
-.nav-pills .nav-link.active {
-    background-color: var(--brand-blue);
-    color: white !important;
-}
-.nav-pills .nav-link {
-    color: #555;
-    font-size: 1.2rem;
-    background-color: #f8f9fa;
-    margin: 0 5px;
-    transition: all 0.3s ease;
-}
-/* Swiper Okları */
-.swiper-pagination-bullet-active { background-color: var(--brand-red) !important; }
-
-/* --- YENİ EKLENEN STİLLER (LİSTE GÖRÜNÜMÜ & FİNANSMAN) --- */
-
-/* Market Listesi Öğeleri */
-.cost-item {
-    transition: all 0.3s ease;
-    border-left: 4px solid transparent;
-}
-.cost-item:hover {
-    background-color: #f8f9fa;
-    border-left: 4px solid var(--brand-blue);
-    transform: translateX(5px);
-}
-
-/* Küçük Ürün Resimleri (Thumbnail) */
-.img-thumbnail-custom {
-    width: 60px;
-    height: 60px;
-    object-fit: cover;
-    border-radius: 12px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-
-/* Ana Bağış Kartı (Mavi Gradient) */
 .main-donation-card {
     background: linear-gradient(135deg, #0033CC 0%, #0055ff 100%);
     color: white;
 }
 
-/* Finansman Bölümü Kartları */
-.financing-card {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.financing-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
-}
+/* Swiper Okları */
+.swiper-pagination-bullet-active { background-color: var(--brand-red) !important; }
