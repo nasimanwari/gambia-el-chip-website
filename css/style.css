@@ -120,3 +120,40 @@ h1, h2, h3, h4, h5, .btn {
 }
 /* Swiper Okları */
 .swiper-pagination-bullet-active { background-color: var(--brand-red) !important; }
+
+/* --- YENİ EKLENEN STİLLER (LİSTE GÖRÜNÜMÜ & FİNANSMAN) --- */
+
+/* Market Listesi Öğeleri */
+.cost-item {
+    transition: all 0.3s ease;
+    border-left: 4px solid transparent;
+}
+.cost-item:hover {
+    background-color: #f8f9fa;
+    border-left: 4px solid var(--brand-blue);
+    transform: translateX(5px);
+}
+
+/* Küçük Ürün Resimleri (Thumbnail) */
+.img-thumbnail-custom {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Ana Bağış Kartı (Mavi Gradient) */
+.main-donation-card {
+    background: linear-gradient(135deg, #0033CC 0%, #0055ff 100%);
+    color: white;
+}
+
+/* Finansman Bölümü Kartları */
+.financing-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.financing-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
+}
