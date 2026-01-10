@@ -88,16 +88,20 @@ if (form) {
     form.addEventListener("submit", handleSubmit);
 }
 
-// COOKIE BANNER KONTROLÜ
+// 4. Çerez Uyarısı Kontrolü (Cookie Banner)
 document.addEventListener("DOMContentLoaded", function() {
     // Eğer daha önce onaylanmadıysa göster
     if (!localStorage.getItem("cookiesAccepted")) {
-        document.getElementById("cookie-banner").style.display = "block";
+        var banner = document.getElementById("cookie-banner");
+        if(banner) banner.style.display = "block";
     }
 
     // Butona basılınca
-    document.getElementById("accept-cookies").addEventListener("click", function() {
-        localStorage.setItem("cookiesAccepted", "true"); // Onayı hafızaya kaydet
-        document.getElementById("cookie-banner").style.display = "none"; // Bannerı gizle
-    });
+    var acceptBtn = document.getElementById("accept-cookies");
+    if(acceptBtn) {
+        acceptBtn.addEventListener("click", function() {
+            localStorage.setItem("cookiesAccepted", "true"); // Onayı hafızaya kaydet
+            document.getElementById("cookie-banner").style.display = "none"; // Bannerı gizle
+        });
+    }
 });
