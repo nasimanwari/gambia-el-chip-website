@@ -5,7 +5,7 @@ html {
 
 body {
     font-family: 'Open Sans', sans-serif;
-    color: #333;
+    color: #1a1a1a; /* Daha koyu siyah metin */
     line-height: 1.6;
 }
 
@@ -18,7 +18,7 @@ h1, h2, h3, h4, h5, .btn {
     --brand-blue: #0033CC;
     --brand-red: #E60000;
     --brand-green: #00CC00;
-    --brand-dark: #1A1A1A;
+    --brand-dark: #111111;
     --swiper-theme-color: #E60000 !important;
 }
 
@@ -26,6 +26,7 @@ h1, h2, h3, h4, h5, .btn {
 .text-brand-blue { color: var(--brand-blue) !important; }
 .text-brand-red { color: var(--brand-red) !important; }
 .text-brand-green { color: var(--brand-green) !important; }
+.text-dark { color: #000000 !important; }
 
 .bg-brand-blue { background-color: var(--brand-blue) !important; color: white !important; }
 .bg-brand-red { background-color: var(--brand-red) !important; color: white !important; }
@@ -36,12 +37,14 @@ h1, h2, h3, h4, h5, .btn {
 .btn-donate {
     background-color: var(--brand-red);
     color: white;
-    font-weight: 700;
+    font-weight: 800; /* Ekstra Kalın */
     padding: 12px 30px;
     border-radius: 50px; 
     box-shadow: 0 4px 15px rgba(230, 0, 0, 0.3);
     transition: all 0.3s ease;
     border: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .btn-donate:hover {
@@ -56,8 +59,8 @@ h1, h2, h3, h4, h5, .btn {
     box-shadow: 0 2px 10px rgba(0,0,0,0.05);
 }
 .nav-link {
-    font-weight: 600;
-    color: var(--brand-dark) !important;
+    font-weight: 700; /* Kalın menü */
+    color: #000 !important;
 }
 .nav-link.active {
     color: var(--brand-blue) !important;
@@ -73,6 +76,10 @@ h1, h2, h3, h4, h5, .btn {
     clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
 }
 
+.text-shadow {
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
 /* KART TASARIMLARI */
 .feature-card, .card {
     border: none;
@@ -85,7 +92,7 @@ h1, h2, h3, h4, h5, .btn {
 
 .feature-card:hover, .card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
 }
 
 .icon-box {
@@ -99,19 +106,19 @@ h1, h2, h3, h4, h5, .btn {
     font-size: 2rem;
 }
 
-/* SWIPER OKLARI */
+/* SWIPER */
 .swiper-pagination-bullet-active { background-color: var(--brand-red) !important; }
 
-/* MARKET BÖLÜMÜ GÖRSEL DÜZELTMESİ */
+/* MARKET GÖRSEL DÜZELTMESİ (ÖNEMLİ) */
 .product-img-container {
     width: 100%;
-    height: 200px;
+    height: 220px;
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: #ffffff;
-    padding: 15px;
-    border-bottom: 1px solid #f0f0f0;
+    padding: 20px;
+    border-bottom: 1px solid #eee;
 }
 
 .product-img-container img {
@@ -122,16 +129,7 @@ h1, h2, h3, h4, h5, .btn {
     object-fit: contain;
 }
 
-/* FİNANSMAN KARTLARI */
-.financing-card {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.financing-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
-}
-
-/* GDPR ÇEREZ BANNER */
+/* GDPR BANNER */
 .cookie-consent-container {
     position: fixed;
     bottom: 0;
@@ -141,8 +139,7 @@ h1, h2, h3, h4, h5, .btn {
     border-top: 1px solid #e0e0e0;
     padding: 20px 0;
     z-index: 99999;
-    box-shadow: 0 -5px 20px rgba(0,0,0,0.05);
-    animation: slideUp 0.5s ease-out;
+    box-shadow: 0 -5px 20px rgba(0,0,0,0.1);
 }
 
 .cookie-content {
@@ -162,14 +159,10 @@ h1, h2, h3, h4, h5, .btn {
 .btn-brand-blue {
     background-color: var(--brand-blue);
     border: 1px solid var(--brand-blue);
+    color: white;
 }
 
 .btn-brand-blue:hover {
     background-color: #002299;
-    border-color: #002299;
-}
-
-@keyframes slideUp {
-    from { transform: translateY(100%); }
-    to { transform: translateY(0); }
+    color: white;
 }
