@@ -1,4 +1,4 @@
-// 1. Swiper Galeri Ayarları
+/* --- SWIPER AYARLARI --- */
 var swiper = new Swiper(".mySwiper", {
     slidesPerView: 1,     // Mobilde 1 resim
     spaceBetween: 20,     // Boşluk
@@ -22,7 +22,7 @@ var swiper = new Swiper(".mySwiper", {
     },
 });
 
-// 2. Hazte Socio Buton Fonksiyonu
+/* --- SCROLL VE FORM İŞLEMLERİ --- */
 function selectVolunteer() {
     var contactSection = document.getElementById('contacto');
     if (contactSection) {
@@ -36,7 +36,6 @@ function selectVolunteer() {
     }
 }
 
-// 3. Formspree AJAX Gönderim Scripti
 var form = document.getElementById("contact-form");
 
 async function handleSubmit(event) {
@@ -45,7 +44,6 @@ async function handleSubmit(event) {
     var btn = document.getElementById("form-button");
     var data = new FormData(event.target);
     
-    // Butonu pasif yap ve yazısını değiştir
     btn.disabled = true;
     btn.innerHTML = "Enviando...";
 
@@ -57,51 +55,87 @@ async function handleSubmit(event) {
         }
     }).then(response => {
         if (response.ok) {
-            // BAŞARILI DURUMU
             status.innerHTML = "¡Gracias! Hemos recibido tu mensaje. ❤️";
-            status.style.color = "#00CC00"; // Yeşil
-            form.reset(); // Formu temizle
+            status.style.color = "#00CC00";
+            form.reset();
             btn.innerHTML = "ENVIAR MENSAJE <i class='fa-solid fa-paper-plane ms-2'></i>";
             btn.disabled = false;
         } else {
-            // HATA DURUMU
             response.json().then(data => {
                 if (Object.hasOwn(data, 'errors')) {
                     status.innerHTML = data["errors"].map(error => error["message"]).join(", ");
                 } else {
                     status.innerHTML = "Oops! Hubo un problema al enviar tu formulario";
                 }
-                status.style.color = "#E60000"; // Kırmızı
+                status.style.color = "#E60000";
                 btn.disabled = false;
             })
         }
     }).catch(error => {
-        // BAĞLANTI HATASI DURUMU
         status.innerHTML = "Oops! Hubo un problema al enviar tu formulario";
         status.style.color = "#E60000";
         btn.disabled = false;
     });
 }
 
-// Eğer form sayfada varsa dinleyiciyi ekle
 if (form) {
     form.addEventListener("submit", handleSubmit);
 }
 
-// 4. Çerez Uyarısı Kontrolü (Cookie Banner)
+/* --- GDPR UYUMLU ÇEREZ YÖNETİMİ (Kritik Bölüm) --- */
+
+// Google Analytics'i Başlatan Fonksiyon (Sadece izin varsa çalışır)
+function loadGoogleAnalytics() {
+    // GA4 Scriptini Oluştur
+    var script = document.createElement('script');
+    script.async = true;
+    script.src = "https://www.googletagmanager.com/gtag/js?id=G-T48PFFC3TY"; // SENİN ID'N
+    document.head.appendChild(script);
+
+    // GA4 Yapılandırması
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-T48PFFC3TY'); 
+    
+    console.log("GDPR: Kullanıcı izni alındı, Google Analytics başlatıldı. ✅");
+}
+
+// Banner Kontrolü ve Olaylar
 document.addEventListener("DOMContentLoaded", function() {
-    // Eğer daha önce onaylanmadıysa göster
-    if (!localStorage.getItem("cookiesAccepted")) {
-        var banner = document.getElementById("cookie-banner");
-        if(banner) banner.style.display = "block";
+    const cookieBanner = document.getElementById("cookie-consent");
+    const acceptBtn = document.getElementById("btn-accept");
+    const rejectBtn = document.getElementById("btn-reject");
+
+    // Kullanıcının daha önceki tercihi var mı?
+    const userConsent = localStorage.getItem("gambiaChip_consent");
+
+    if (userConsent === "accepted") {
+        // Zaten kabul etmiş, Analytics'i hemen başlat
+        loadGoogleAnalytics();
+    } else if (userConsent === "rejected") {
+        // Reddetmiş, hiçbir şey yapma (Analytics çalışmaz)
+        console.log("GDPR: Kullanıcı çerezleri reddetti. Analytics engellendi. 🛑");
+    } else {
+        // Henüz bir şey seçmemiş, Banner'ı göster
+        if(cookieBanner) cookieBanner.style.display = "block";
     }
 
-    // Butona basılınca
-    var acceptBtn = document.getElementById("accept-cookies");
-    if(acceptBtn) {
+    // KABUL ET butonuna basınca
+    if (acceptBtn) {
         acceptBtn.addEventListener("click", function() {
-            localStorage.setItem("cookiesAccepted", "true"); // Onayı hafızaya kaydet
-            document.getElementById("cookie-banner").style.display = "none"; // Bannerı gizle
+            localStorage.setItem("gambiaChip_consent", "accepted"); // İzni kaydet
+            if(cookieBanner) cookieBanner.style.display = "none"; // Banner'ı gizle
+            loadGoogleAnalytics(); // ANALYTICS'İ ŞİMDİ BAŞLAT
+        });
+    }
+
+    // REDDET butonuna basınca
+    if (rejectBtn) {
+        rejectBtn.addEventListener("click", function() {
+            localStorage.setItem("gambiaChip_consent", "rejected"); // Reddi kaydet
+            if(cookieBanner) cookieBanner.style.display = "none"; // Banner'ı gizle
+            // Analytics fonksiyonunu ASLA çağırma
         });
     }
 });
