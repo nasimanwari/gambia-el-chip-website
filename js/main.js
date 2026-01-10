@@ -87,3 +87,17 @@ async function handleSubmit(event) {
 if (form) {
     form.addEventListener("submit", handleSubmit);
 }
+
+// COOKIE BANNER KONTROLÜ
+document.addEventListener("DOMContentLoaded", function() {
+    // Eğer daha önce onaylanmadıysa göster
+    if (!localStorage.getItem("cookiesAccepted")) {
+        document.getElementById("cookie-banner").style.display = "block";
+    }
+
+    // Butona basılınca
+    document.getElementById("accept-cookies").addEventListener("click", function() {
+        localStorage.setItem("cookiesAccepted", "true"); // Onayı hafızaya kaydet
+        document.getElementById("cookie-banner").style.display = "none"; // Bannerı gizle
+    });
+});
