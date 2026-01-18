@@ -2,7 +2,9 @@
 var swiper = new Swiper(".mySwiper", {
     slidesPerView: 1,     
     spaceBetween: 20,     
-    loop: true,           
+    loop: true,
+    observer: true,       // EKLENDİ: Değişiklikleri izle
+    observeParents: true, // EKLENDİ: Kapsayıcıyı izle
     autoplay: {           
         delay: 3000,
         disableOnInteraction: false,
@@ -27,23 +29,28 @@ var schoolGallerySwiper = new Swiper(".schoolGallerySwiper", {
     slidesPerView: 1, 
     spaceBetween: 0,
     loop: true,
+    observer: true,       // EKLENDİ
+    observeParents: true, // EKLENDİ
     autoplay: { delay: 4000, disableOnInteraction: false },
     effect: "fade", 
     fadeEffect: { crossFade: true },
     pagination: { el: ".swiper-pagination", clickable: true },
+    // DİKKAT: Özel isimlendirilmiş ok tuşları
     navigation: { nextEl: ".school-next", prevEl: ".school-prev" },
 });
 
-/* --- 3. SWIPER: MERCADILLO GALERİSİ (YENİ!) --- */
+/* --- 3. SWIPER: MERCADILLO GALERİSİ --- */
 var mercadilloSwiper = new Swiper(".mercadilloSwiper", {
     slidesPerView: 1, 
     spaceBetween: 0,
     loop: true,
+    observer: true,       // EKLENDİ: Resim yüklenmesini bekle
+    observeParents: true, // EKLENDİ: Alanı kontrol et
     autoplay: { delay: 3500, disableOnInteraction: false },
     pagination: { el: ".swiper-pagination", clickable: true },
 });
 
-/* --- SCROLL VE FORM İŞLEMLERİ --- */
+/* --- FORM VE SCROLL İŞLEMLERİ --- */
 function selectVolunteer() {
     var contactSection = document.getElementById('contacto');
     if (contactSection) {
