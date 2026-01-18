@@ -61,6 +61,23 @@ var videoSwiper = new Swiper(".videoSwiper", {
 });
 
 /* --- FORM VE SCROLL İŞLEMLERİ --- */
+
+// "Hazte Socio" butonuna basınca çalışacak fonksiyon
+function becomeMember() {
+    var contactSection = document.getElementById('contacto');
+    if (contactSection) {
+        contactSection.scrollIntoView({behavior: 'smooth'});
+        setTimeout(function() {
+            var subjectSelect = document.getElementById('subject-select');
+            if(subjectSelect) {
+                // Formdaki "Socio" seçeneğini otomatik seç
+                subjectSelect.value = "Socio";
+            }
+        }, 500);
+    }
+}
+
+// "Voluntariado" için genel fonksiyon
 function selectVolunteer() {
     var contactSection = document.getElementById('contacto');
     if (contactSection) {
@@ -120,7 +137,7 @@ if (form) {
     form.addEventListener("submit", handleSubmit);
 }
 
-/* --- GDPR ANALYTICS (TEMİZ VE HATASIZ) --- */
+/* --- GDPR ANALYTICS --- */
 function loadGoogleAnalytics() {
     var script = document.createElement('script');
     script.async = true;

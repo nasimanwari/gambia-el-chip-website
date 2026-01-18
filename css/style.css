@@ -238,7 +238,7 @@ h1, h2, h3, h4, h5, .btn {
     100% { box-shadow: 0 0 0 0 rgba(230, 0, 0, 0); }
 }
 
-/* --- SİNEMA MODU VİDEO GALERİSİ (BEYAZ/TEMİZ TEMA) --- */
+/* --- SİNEMA MODU VİDEO GALERİSİ (BEYAZ TEMA) --- */
 .video-section {
     background-color: white; /* BEYAZ ARKA PLAN */
     color: #333;
