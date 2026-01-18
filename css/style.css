@@ -227,14 +227,15 @@ h1, h2, h3, h4, h5, .btn {
     70% { box-shadow: 0 0 0 15px rgba(230, 0, 0, 0); }
     100% { box-shadow: 0 0 0 0 rgba(230, 0, 0, 0); }
 }
-/* --- SİNEMA MODU VİDEO GALERİSİ --- */
+
+/* --- VİDEO GALERİSİ (BEYAZ/TEMİZ TEMA) --- */
 .video-section {
-    background-color: #111; /* Koyu tema */
-    color: white;
+    background-color: white; /* İsteğin üzerine beyaz yapıldı */
+    color: #333;
 }
 
 .main-video-container {
-    border: 1px solid #333;
+    border: 1px solid #ddd;
     border-radius: 10px;
     overflow: hidden;
     background: black;
@@ -243,14 +244,14 @@ h1, h2, h3, h4, h5, .btn {
 .video-thumb {
     cursor: pointer;
     transition: all 0.3s ease;
-    opacity: 0.6;
+    opacity: 0.8;
     border-radius: 8px;
     overflow: hidden;
 }
 
 .video-thumb img {
     width: 100%;
-    height: 100px; /* Sabit yükseklik */
+    height: 100px;
     object-fit: cover;
     border-radius: 8px;
 }
@@ -262,7 +263,7 @@ h1, h2, h3, h4, h5, .btn {
 
 .video-thumb.active-thumb {
     opacity: 1;
-    border: 2px solid #E60000; /* Seçili video kırmızı çerçeve */
+    border: 3px solid #E60000; /* Kırmızı çerçeve */
 }
 
 .play-overlay {

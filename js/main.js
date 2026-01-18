@@ -37,6 +37,29 @@ var mercadilloSwiper = new Swiper(".mercadilloSwiper", {
     navigation: { nextEl: ".merca-next", prevEl: ".merca-prev" },
 });
 
+/* --- 4. VIDEO GALERİSİ (SİNEMA MODU) --- */
+function changeVideo(videoId, title, element) {
+    var mainFrame = document.getElementById('main-video-frame');
+    mainFrame.src = "https://www.youtube.com/embed/" + videoId + "?autoplay=1&rel=0";
+    document.getElementById('main-video-title').innerText = title;
+    var thumbs = document.querySelectorAll('.video-thumb');
+    thumbs.forEach(t => t.classList.remove('active-thumb'));
+    element.classList.add('active-thumb');
+}
+
+var videoSwiper = new Swiper(".videoSwiper", {
+    slidesPerView: 2,
+    spaceBetween: 15,
+    navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+    },
+    breakpoints: {
+        640: { slidesPerView: 3 },
+        1024: { slidesPerView: 4 },
+    },
+});
+
 /* --- FORM VE SCROLL İŞLEMLERİ --- */
 function selectVolunteer() {
     var contactSection = document.getElementById('contacto');
@@ -97,7 +120,7 @@ if (form) {
     form.addEventListener("submit", handleSubmit);
 }
 
-/* --- GDPR ANALYTICS (DÜZELTİLDİ) --- */
+/* --- GDPR ANALYTICS --- */
 function loadGoogleAnalytics() {
     var script = document.createElement('script');
     script.async = true;
@@ -141,36 +164,4 @@ document.addEventListener("DOMContentLoaded", function() {
             if(cookieBanner) cookieBanner.style.display = "none";
         });
     }
-});
-
-/* --- VİDEO GALERİSİ FONKSİYONLARI --- */
-
-// 1. Video Değiştirme
-function changeVideo(videoId, title, element) {
-    // İframe'i güncelle
-    var mainFrame = document.getElementById('main-video-frame');
-    // Autoplay ekleyerek video değişince otomatik başlatıyoruz
-    mainFrame.src = "https://www.youtube.com/embed/" + videoId + "?autoplay=1&rel=0";
-    
-    // Başlığı güncelle
-    document.getElementById('main-video-title').innerText = title;
-
-    // Aktif sınıfını yönet (Kırmızı çerçeve)
-    var thumbs = document.querySelectorAll('.video-thumb');
-    thumbs.forEach(t => t.classList.remove('active-thumb'));
-    element.classList.add('active-thumb');
-}
-
-// 2. Video Slider Başlat
-var videoSwiper = new Swiper(".videoSwiper", {
-    slidesPerView: 2,
-    spaceBetween: 15,
-    navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-    },
-    breakpoints: {
-        640: { slidesPerView: 3 },
-        1024: { slidesPerView: 4 },
-    },
 });
