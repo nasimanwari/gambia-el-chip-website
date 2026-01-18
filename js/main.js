@@ -22,28 +22,28 @@ var swiper = new Swiper(".mySwiper", {
     },
 });
 
-/* --- 2. SWIPER: OKUL GALERİSİ (YENİ EKLENEN) --- */
+/* --- 2. SWIPER: OKUL GALERİSİ --- */
 var schoolGallerySwiper = new Swiper(".schoolGallerySwiper", {
     slidesPerView: 1, 
     spaceBetween: 0,
     loop: true,
-    observer: true, // RESİMLERİN YÜKLENMESİNİ BEKLE
-    observeParents: true, // ALANI KONTROL ET
-    autoplay: { 
-        delay: 4000, 
-        disableOnInteraction: false 
-    },
+    autoplay: { delay: 4000, disableOnInteraction: false },
     effect: "fade", 
     fadeEffect: { crossFade: true },
     pagination: { el: ".swiper-pagination", clickable: true },
-    // DİKKAT: BURADA ÖZEL İSİMLENDİRİLMİŞ TUŞLARI KULLANIYORUZ
-    navigation: { 
-        nextEl: ".school-next", 
-        prevEl: ".school-prev" 
-    },
+    navigation: { nextEl: ".school-next", prevEl: ".school-prev" },
 });
 
-/* --- FORM VE SCROLL İŞLEMLERİ --- */
+/* --- 3. SWIPER: MERCADILLO GALERİSİ (YENİ!) --- */
+var mercadilloSwiper = new Swiper(".mercadilloSwiper", {
+    slidesPerView: 1, 
+    spaceBetween: 0,
+    loop: true,
+    autoplay: { delay: 3500, disableOnInteraction: false },
+    pagination: { el: ".swiper-pagination", clickable: true },
+});
+
+/* --- SCROLL VE FORM İŞLEMLERİ --- */
 function selectVolunteer() {
     var contactSection = document.getElementById('contacto');
     if (contactSection) {
