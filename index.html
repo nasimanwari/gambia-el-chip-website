@@ -340,18 +340,80 @@
         </div>
     </section>
 
-    <section class="py-5 bg-white" id="video">
+    <section class="py-5 video-section" id="video">
         <div class="container py-5">
             <div class="row justify-content-center text-center mb-4">
                 <div class="col-lg-8">
-                    <span class="text-brand-red fw-bold text-uppercase">Nuestra Realidad</span>
-                    <h2 class="display-5 fw-bold mb-3">Una imagen vale más que mil palabras</h2>
+                    <span class="text-brand-red fw-bold text-uppercase ls-2">Nuestra Realidad</span>
+                    <h2 class="display-5 fw-bold mb-3 text-white">Mira el impacto de tu ayuda</h2>
+                    <p class="lead text-white-50">Historias reales desde Serrekunda. Dale al play y siente Gambia.</p>
                 </div>
             </div>
-            <div class="row justify-content-center">
+
+            <div class="row justify-content-center mb-5">
                 <div class="col-lg-10">
-                    <div class="ratio ratio-16x9 shadow-lg rounded-4 overflow-hidden" style="border: 4px solid #fff;">
-                        <iframe src="https://www.youtube.com/embed/ysz5S6PUM-U?rel=0" title="YouTube video" allowfullscreen></iframe>
+                    <div class="ratio ratio-16x9 main-video-container">
+                        <iframe id="main-video-frame" 
+                                src="https://www.youtube.com/embed/ezCYBd9fQBA?rel=0" 
+                                title="Gambia el Chip Video" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen>
+                        </iframe>
+                    </div>
+                    <div class="text-center mt-3">
+                        <h3 id="main-video-title" class="fw-bold text-white">Hazte socio y ayúdanos con este sueño</h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12">
+                    <p class="text-white-50 mb-3 small fw-bold text-uppercase">Más Videos (Haz click para ver):</p>
+                    <div class="swiper videoSwiper p-2">
+                        <div class="swiper-wrapper">
+                            
+                            <div class="swiper-slide video-thumb active-thumb" onclick="changeVideo('ezCYBd9fQBA', 'Hazte socio y ayúdanos con este sueño', this)">
+                                <div class="position-relative">
+                                    <img src="https://img.youtube.com/vi/ezCYBd9fQBA/mqdefault.jpg" alt="Video Socio">
+                                    <i class="fa-solid fa-circle-play play-icon-overlay"></i>
+                                </div>
+                                <p class="small text-white mt-2 mb-0 lh-sm">Hazte Socio</p>
+                            </div>
+
+                            <div class="swiper-slide video-thumb" onclick="changeVideo('kAxe1sF1_rE', 'Niños aprenden los números', this)">
+                                <div class="position-relative">
+                                    <img src="https://img.youtube.com/vi/kAxe1sF1_rE/mqdefault.jpg" alt="Video Numeros">
+                                    <i class="fa-solid fa-circle-play play-icon-overlay"></i>
+                                </div>
+                                <p class="small text-white mt-2 mb-0 lh-sm">Aprendiendo números</p>
+                            </div>
+
+                            <div class="swiper-slide video-thumb" onclick="changeVideo('gxNrw4eaYes', 'Estudiantes reciben beca escolar', this)">
+                                <div class="position-relative">
+                                    <img src="https://img.youtube.com/vi/gxNrw4eaYes/mqdefault.jpg" alt="Video Becas">
+                                    <i class="fa-solid fa-circle-play play-icon-overlay"></i>
+                                </div>
+                                <p class="small text-white mt-2 mb-0 lh-sm">Entrega de Becas</p>
+                            </div>
+
+                            <div class="swiper-slide video-thumb" onclick="changeVideo('w8qLRJLWyjc', 'Día de convivencia de socios 2025', this)">
+                                <div class="position-relative">
+                                    <img src="https://img.youtube.com/vi/w8qLRJLWyjc/mqdefault.jpg" alt="Video Convivencia">
+                                    <i class="fa-solid fa-circle-play play-icon-overlay"></i>
+                                </div>
+                                <p class="small text-white mt-2 mb-0 lh-sm">Día de Convivencia</p>
+                            </div>
+
+                            <div class="swiper-slide video-thumb" onclick="changeVideo('HCUwhoidaH4', 'Clases de apoyo inglés y matemáticas', this)">
+                                <div class="position-relative">
+                                    <img src="https://img.youtube.com/vi/HCUwhoidaH4/mqdefault.jpg" alt="Video Clases">
+                                    <i class="fa-solid fa-circle-play play-icon-overlay"></i>
+                                </div>
+                                <p class="small text-white mt-2 mb-0 lh-sm">Clases de Apoyo</p>
+                            </div>
+
+                        </div>
+                        <div class="swiper-scrollbar mt-3 bg-secondary"></div>
                     </div>
                 </div>
             </div>

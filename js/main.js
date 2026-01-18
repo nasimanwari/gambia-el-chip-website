@@ -142,3 +142,35 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 });
+
+/* --- VİDEO GALERİSİ FONKSİYONLARI --- */
+
+// 1. Video Değiştirme Fonksiyonu
+function changeVideo(videoId, title, element) {
+    // Ana iframe'i güncelle
+    var mainFrame = document.getElementById('main-video-frame');
+    mainFrame.src = "https://www.youtube.com/embed/" + videoId + "?autoplay=1&rel=0";
+    
+    // Başlığı güncelle
+    document.getElementById('main-video-title').innerText = title;
+
+    // Aktif sınıfını yönet (Kırmızı çerçeve için)
+    var thumbs = document.querySelectorAll('.video-thumb');
+    thumbs.forEach(t => t.classList.remove('active-thumb'));
+    element.classList.add('active-thumb');
+}
+
+// 2. Video Slider Ayarları
+var videoSwiper = new Swiper(".videoSwiper", {
+    slidesPerView: 2,
+    spaceBetween: 15,
+    scrollbar: {
+        el: ".swiper-scrollbar",
+        hide: false,
+        draggable: true,
+    },
+    breakpoints: {
+        640: { slidesPerView: 3 },
+        1024: { slidesPerView: 4 },
+    },
+});
