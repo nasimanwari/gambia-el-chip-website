@@ -3,25 +3,12 @@ var swiper = new Swiper(".mySwiper", {
     slidesPerView: 1,     
     spaceBetween: 20,     
     loop: true,
-    observer: true,       // EKLENDİ: Değişiklikleri izle
-    observeParents: true, // EKLENDİ: Kapsayıcıyı izle
-    autoplay: {           
-        delay: 3000,
-        disableOnInteraction: false,
-    },
-    pagination: {         
-        el: ".swiper-pagination",
-        clickable: true,
-    },
-    navigation: {         
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-    },
-    breakpoints: {        
-        640: { slidesPerView: 1 },
-        768: { slidesPerView: 2 },
-        1024: { slidesPerView: 3 }, 
-    },
+    observer: true,
+    observeParents: true,
+    autoplay: { delay: 3000, disableOnInteraction: false },
+    pagination: { el: ".swiper-pagination", clickable: true },
+    navigation: { nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" },
+    breakpoints: { 640: { slidesPerView: 1 }, 768: { slidesPerView: 2 }, 1024: { slidesPerView: 3 } },
 });
 
 /* --- 2. SWIPER: OKUL GALERİSİ --- */
@@ -29,28 +16,30 @@ var schoolGallerySwiper = new Swiper(".schoolGallerySwiper", {
     slidesPerView: 1, 
     spaceBetween: 0,
     loop: true,
-    observer: true,       // EKLENDİ
-    observeParents: true, // EKLENDİ
+    observer: true,
+    observeParents: true,
     autoplay: { delay: 4000, disableOnInteraction: false },
     effect: "fade", 
     fadeEffect: { crossFade: true },
     pagination: { el: ".swiper-pagination", clickable: true },
-    // DİKKAT: Özel isimlendirilmiş ok tuşları
     navigation: { nextEl: ".school-next", prevEl: ".school-prev" },
 });
 
-/* --- 3. SWIPER: MERCADILLO GALERİSİ --- */
+/* --- 3. SWIPER: MERCADILLO (OK TUŞLARI AKTİF) --- */
 var mercadilloSwiper = new Swiper(".mercadilloSwiper", {
     slidesPerView: 1, 
     spaceBetween: 0,
     loop: true,
-    observer: true,       // EKLENDİ: Resim yüklenmesini bekle
-    observeParents: true, // EKLENDİ: Alanı kontrol et
+    observer: true,
+    observeParents: true,
     autoplay: { delay: 3500, disableOnInteraction: false },
     pagination: { el: ".swiper-pagination", clickable: true },
+    // YENİ EKLENEN KISIM:
+    navigation: { nextEl: ".merca-next", prevEl: ".merca-prev" },
 });
 
-/* --- FORM VE SCROLL İŞLEMLERİ --- */
+/* --- DİĞER KODLAR AYNEN KALSIN (Form, GDPR vs.) --- */
+// (Buraya önceki form ve analytics kodlarını yapıştır)
 function selectVolunteer() {
     var contactSection = document.getElementById('contacto');
     if (contactSection) {
@@ -110,11 +99,10 @@ if (form) {
     form.addEventListener("submit", handleSubmit);
 }
 
-/* --- GDPR ANALYTICS --- */
 function loadGoogleAnalytics() {
     var script = document.createElement('script');
     script.async = true;
-    script.src = "https://www.googletagmanager.com/gtag/js?id=G-T48PFFC3TY"; 
+    script.src = "[https://www.googletagmanager.com/gtag/js?id=G-T48PFFC3TY](https://www.googletagmanager.com/gtag/js?id=G-T48PFFC3TY)"; 
     document.head.appendChild(script);
 
     window.dataLayer = window.dataLayer || [];

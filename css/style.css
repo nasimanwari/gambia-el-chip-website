@@ -166,3 +166,38 @@ h1, h2, h3, h4, h5, .btn {
     background-color: #002299;
     color: white;
 }
+
+/* --- POLAROID KART EFEKTİ (SEYAHATLER İÇİN) --- */
+.polaroid-card {
+    background: white;
+    padding: 15px 15px 50px 15px; /* Alt boşluk yazı için */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    transition: all 0.4s ease;
+    transform: rotate(-2deg); /* Sola yatık */
+    position: relative;
+    z-index: 1;
+    border-radius: 2px;
+}
+
+/* Çift sıradakileri sağa yatır ki dağınık dursun */
+.polaroid-card:nth-child(even) {
+    transform: rotate(2deg);
+}
+
+/* Üzerine gelince düzleşsin ve büyüsün */
+.polaroid-card:hover {
+    transform: scale(1.1) rotate(0deg) !important;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    z-index: 10;
+}
+
+.polaroid-caption {
+    font-family: 'Montserrat', sans-serif; /* El yazısı havası */
+    color: #444;
+    margin-top: 15px;
+    font-weight: 700;
+    text-align: center;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
