@@ -106,6 +106,16 @@ h1, h2, h3, h4, h5, .btn {
     font-size: 2rem;
 }
 
+.icon-box-sm {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 1.5rem;
+}
+
 /* SWIPER */
 .swiper-pagination-bullet-active { background-color: var(--brand-red) !important; }
 
@@ -228,9 +238,9 @@ h1, h2, h3, h4, h5, .btn {
     100% { box-shadow: 0 0 0 0 rgba(230, 0, 0, 0); }
 }
 
-/* --- VİDEO GALERİSİ (BEYAZ/TEMİZ TEMA) --- */
+/* --- SİNEMA MODU VİDEO GALERİSİ (BEYAZ/TEMİZ TEMA) --- */
 .video-section {
-    background-color: white; /* İsteğin üzerine beyaz yapıldı */
+    background-color: white; /* BEYAZ ARKA PLAN */
     color: #333;
 }
 
@@ -251,7 +261,7 @@ h1, h2, h3, h4, h5, .btn {
 
 .video-thumb img {
     width: 100%;
-    height: 100px;
+    height: 100px; /* Sabit yükseklik */
     object-fit: cover;
     border-radius: 8px;
 }
@@ -263,7 +273,7 @@ h1, h2, h3, h4, h5, .btn {
 
 .video-thumb.active-thumb {
     opacity: 1;
-    border: 3px solid #E60000; /* Kırmızı çerçeve */
+    border: 3px solid #E60000; /* Seçili video kırmızı çerçeve */
 }
 
 .play-overlay {

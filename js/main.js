@@ -120,7 +120,7 @@ if (form) {
     form.addEventListener("submit", handleSubmit);
 }
 
-/* --- GDPR ANALYTICS --- */
+/* --- GDPR ANALYTICS (TEMİZ VE HATASIZ) --- */
 function loadGoogleAnalytics() {
     var script = document.createElement('script');
     script.async = true;
