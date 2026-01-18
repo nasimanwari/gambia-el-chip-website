@@ -201,3 +201,31 @@ h1, h2, h3, h4, h5, .btn {
     text-transform: uppercase;
     font-size: 0.9rem;
 }
+
+/* --- STICKY DONATE BUTTON (MOBİL İÇİN) --- */
+.sticky-donate-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #E60000;
+    color: white;
+    font-weight: 800;
+    padding: 15px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.4);
+    z-index: 9999;
+    transition: all 0.3s ease;
+    animation: pulse 2s infinite;
+}
+
+.sticky-donate-btn:hover {
+    transform: scale(1.1);
+    color: white;
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(230, 0, 0, 0.7); }
+    70% { box-shadow: 0 0 0 15px rgba(230, 0, 0, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(230, 0, 0, 0); }
+}
