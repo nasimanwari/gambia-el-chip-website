@@ -1,4 +1,4 @@
-/* --- SWIPER AYARLARI --- */
+/* --- 1. SWIPER: TAKIM & GÖNÜLLÜLER (Quienes Somos) --- */
 var swiper = new Swiper(".mySwiper", {
     slidesPerView: 1,     // Mobilde 1 resim
     spaceBetween: 20,     // Boşluk
@@ -19,6 +19,27 @@ var swiper = new Swiper(".mySwiper", {
         640: { slidesPerView: 1 },
         768: { slidesPerView: 2 },
         1024: { slidesPerView: 3 }, // Masaüstünde 3 resim
+    },
+});
+
+/* --- 2. SWIPER: OKUL GALERİSİ (YENİ EKLENEN KISIM) --- */
+var schoolGallerySwiper = new Swiper(".schoolGallerySwiper", {
+    slidesPerView: 1,       // Tek büyük resim
+    spaceBetween: 0,        // Boşluk yok
+    loop: true,             // Sonsuz döngü
+    autoplay: {             
+        delay: 4000,        // 4 saniyede bir değişsin
+        disableOnInteraction: false,
+    },
+    effect: "fade",         // Yumuşak geçiş efekti
+    fadeEffect: { crossFade: true },
+    pagination: {           
+        el: ".swiper-pagination",
+        clickable: true,
+    },
+    navigation: {           
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
     },
 });
 
@@ -82,17 +103,15 @@ if (form) {
     form.addEventListener("submit", handleSubmit);
 }
 
-/* --- GDPR UYUMLU ÇEREZ YÖNETİMİ (Kritik Bölüm) --- */
+/* --- GDPR UYUMLU ÇEREZ YÖNETİMİ (Analytics) --- */
 
-// Google Analytics'i Başlatan Fonksiyon (Sadece izin varsa çalışır)
+// Google Analytics'i Başlatan Fonksiyon
 function loadGoogleAnalytics() {
-    // GA4 Scriptini Oluştur
     var script = document.createElement('script');
     script.async = true;
     script.src = "https://www.googletagmanager.com/gtag/js?id=G-T48PFFC3TY"; // SENİN ID'N
     document.head.appendChild(script);
 
-    // GA4 Yapılandırması
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
@@ -111,31 +130,27 @@ document.addEventListener("DOMContentLoaded", function() {
     const userConsent = localStorage.getItem("gambiaChip_consent");
 
     if (userConsent === "accepted") {
-        // Zaten kabul etmiş, Analytics'i hemen başlat
         loadGoogleAnalytics();
     } else if (userConsent === "rejected") {
-        // Reddetmiş, hiçbir şey yapma (Analytics çalışmaz)
-        console.log("GDPR: Kullanıcı çerezleri reddetti. Analytics engellendi. 🛑");
+        console.log("GDPR: Kullanıcı çerezleri reddetti. Analytics engellendi.");
     } else {
-        // Henüz bir şey seçmemiş, Banner'ı göster
         if(cookieBanner) cookieBanner.style.display = "block";
     }
 
     // KABUL ET butonuna basınca
     if (acceptBtn) {
         acceptBtn.addEventListener("click", function() {
-            localStorage.setItem("gambiaChip_consent", "accepted"); // İzni kaydet
-            if(cookieBanner) cookieBanner.style.display = "none"; // Banner'ı gizle
-            loadGoogleAnalytics(); // ANALYTICS'İ ŞİMDİ BAŞLAT
+            localStorage.setItem("gambiaChip_consent", "accepted"); 
+            if(cookieBanner) cookieBanner.style.display = "none"; 
+            loadGoogleAnalytics(); 
         });
     }
 
     // REDDET butonuna basınca
     if (rejectBtn) {
         rejectBtn.addEventListener("click", function() {
-            localStorage.setItem("gambiaChip_consent", "rejected"); // Reddi kaydet
-            if(cookieBanner) cookieBanner.style.display = "none"; // Banner'ı gizle
-            // Analytics fonksiyonunu ASLA çağırma
+            localStorage.setItem("gambiaChip_consent", "rejected"); 
+            if(cookieBanner) cookieBanner.style.display = "none"; 
         });
     }
 });
