@@ -43,7 +43,8 @@
                 <ul class="navbar-nav ms-auto align-items-center fw-bold">
                     <li class="nav-item"><a class="nav-link active" href="#">Inicio</a></li>
                     <li class="nav-item"><a class="nav-link" href="#proyectos">Qué Hacemos</a></li>
-                    <li class="nav-item"><a class="nav-link text-brand-red" href="#viajes">Viajes</a></li> <li class="nav-item"><a class="nav-link" href="#nosotros">Quiénes Somos</a></li>
+                    <li class="nav-item"><a class="nav-link text-brand-red" href="#viajes">Viajes</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#nosotros">Quiénes Somos</a></li>
                     <li class="nav-item"><a class="nav-link text-brand-green" href="#contacto" onclick="selectVolunteer()">Hazte Socio</a></li>
                     <li class="nav-item ms-lg-3">
                         <a href="#colabora" class="btn btn-donate">
@@ -129,12 +130,14 @@
                         <div class="swiper-wrapper">
                             <div class="swiper-slide"><img src="img/escuela1.jpg" class="img-fluid w-100" style="height: 500px; object-fit: contain;"></div>
                             <div class="swiper-slide"><img src="img/escuela2.jpg" class="img-fluid w-100" style="height: 500px; object-fit: contain;"></div>
-                            <div class="swiper-slide"><img src="img/escuela3.jpg" class="img-fluid w-100" style="height: 500px; object-fit: contain;"></div> <div class="swiper-slide"><img src="img/escuela4.jpg" class="img-fluid w-100" style="height: 500px; object-fit: contain;"></div>
+                            <div class="swiper-slide"><img src="img/escuela3.jpg" class="img-fluid w-100" style="height: 500px; object-fit: contain;"></div>
+                            <div class="swiper-slide"><img src="img/escuela4.jpg" class="img-fluid w-100" style="height: 500px; object-fit: contain;"></div>
                             <div class="swiper-slide"><img src="img/escuela5.jpg" class="img-fluid w-100" style="height: 500px; object-fit: contain;"></div>
                             <div class="swiper-slide"><img src="img/escuela6.jpg" class="img-fluid w-100" style="height: 500px; object-fit: contain;"></div>
                             <div class="swiper-slide"><img src="img/escuela7.jpg" class="img-fluid w-100" style="height: 500px; object-fit: contain;"></div>
                             <div class="swiper-slide"><img src="img/escuela8.jpg" class="img-fluid w-100" style="height: 500px; object-fit: contain;"></div>
-                            <div class="swiper-slide"><img src="img/Escuela9.jpg" class="img-fluid w-100" style="height: 500px; object-fit: contain;"></div> <div class="swiper-slide"><img src="img/escuela10.jpg" class="img-fluid w-100" style="height: 500px; object-fit: contain;"></div>
+                            <div class="swiper-slide"><img src="img/Escuela9.jpg" class="img-fluid w-100" style="height: 500px; object-fit: contain;"></div>
+                            <div class="swiper-slide"><img src="img/escuela10.jpg" class="img-fluid w-100" style="height: 500px; object-fit: contain;"></div>
                         </div>
                         <div class="swiper-pagination"></div>
                         <div class="swiper-button-next school-next text-brand-blue"></div>
@@ -145,7 +148,8 @@
         </div>
     </section>
 
-    <section class="py-5" id="viajes" style="background-color: #fff8e1;"> <div class="container py-5">
+    <section class="py-5" id="viajes" style="background-color: #fff8e1;"> 
+        <div class="container py-5">
             <div class="row text-center mb-5">
                 <div class="col-lg-8 mx-auto">
                     <span class="text-brand-red fw-bold text-uppercase" style="letter-spacing: 2px;">Experiencias</span>
@@ -256,8 +260,8 @@
                             <div class="swiper-slide"><img src="img/mercadillo5.jpg" class="img-fluid w-100" style="height: 350px; object-fit: cover;"></div>
                         </div>
                         <div class="swiper-pagination"></div>
-                        <div class="swiper-button-next merca-next text-white"></div>
-                        <div class="swiper-button-prev merca-prev text-white"></div>
+                        <div class="swiper-button-next merca-next text-white" style="z-index: 10;"></div>
+                        <div class="swiper-button-prev merca-prev text-white" style="z-index: 10;"></div>
                     </div>
                 </div>
             </div>
@@ -278,6 +282,9 @@
                 <div class="col-lg-5 text-center">
                      <div class="position-relative">
                         <img src="img/equipo.jpg" alt="Equipo" class="img-fluid rounded-4 shadow-lg border border-4 border-white">
+                        <div class="position-absolute bottom-0 end-0 bg-brand-blue text-white px-4 py-2 rounded-pill shadow m-3 fw-bold">
+                            Desde 2019 <i class="fa-solid fa-heart ms-1"></i>
+                        </div>
                      </div>
                 </div>
             </div>

@@ -25,7 +25,7 @@ var schoolGallerySwiper = new Swiper(".schoolGallerySwiper", {
     navigation: { nextEl: ".school-next", prevEl: ".school-prev" },
 });
 
-/* --- 3. SWIPER: MERCADILLO (OK TUŞLARI AKTİF) --- */
+/* --- 3. SWIPER: MERCADILLO (OK TUŞLARI EKLENDİ) --- */
 var mercadilloSwiper = new Swiper(".mercadilloSwiper", {
     slidesPerView: 1, 
     spaceBetween: 0,
@@ -34,12 +34,10 @@ var mercadilloSwiper = new Swiper(".mercadilloSwiper", {
     observeParents: true,
     autoplay: { delay: 3500, disableOnInteraction: false },
     pagination: { el: ".swiper-pagination", clickable: true },
-    // YENİ EKLENEN KISIM:
     navigation: { nextEl: ".merca-next", prevEl: ".merca-prev" },
 });
 
-/* --- DİĞER KODLAR AYNEN KALSIN (Form, GDPR vs.) --- */
-// (Buraya önceki form ve analytics kodlarını yapıştır)
+/* --- FORM VE SCROLL İŞLEMLERİ --- */
 function selectVolunteer() {
     var contactSection = document.getElementById('contacto');
     if (contactSection) {
@@ -99,6 +97,7 @@ if (form) {
     form.addEventListener("submit", handleSubmit);
 }
 
+/* --- GDPR ANALYTICS --- */
 function loadGoogleAnalytics() {
     var script = document.createElement('script');
     script.async = true;
