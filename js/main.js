@@ -1,4 +1,4 @@
-/* --- 1. SWIPER: TAKIM & GÖNÜLLÜLER (Biz Kimiz) --- */
+/* --- 1. SWIPER: BİZ KİMİZ (EKİP) --- */
 var swiper = new Swiper(".mySwiper", {
     slidesPerView: 1,     
     spaceBetween: 20,     
@@ -22,19 +22,28 @@ var swiper = new Swiper(".mySwiper", {
     },
 });
 
-/* --- 2. SWIPER: OKUL GALERİSİ (YENİ EKLENEN KISIM) --- */
+/* --- 2. SWIPER: OKUL GALERİSİ (YENİ EKLENEN) --- */
 var schoolGallerySwiper = new Swiper(".schoolGallerySwiper", {
     slidesPerView: 1, 
     spaceBetween: 0,
     loop: true,
-    autoplay: { delay: 4000, disableOnInteraction: false },
-    effect: "fade", // Yumuşak geçiş
+    observer: true, // RESİMLERİN YÜKLENMESİNİ BEKLE
+    observeParents: true, // ALANI KONTROL ET
+    autoplay: { 
+        delay: 4000, 
+        disableOnInteraction: false 
+    },
+    effect: "fade", 
     fadeEffect: { crossFade: true },
-    navigation: { nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" },
     pagination: { el: ".swiper-pagination", clickable: true },
+    // DİKKAT: BURADA ÖZEL İSİMLENDİRİLMİŞ TUŞLARI KULLANIYORUZ
+    navigation: { 
+        nextEl: ".school-next", 
+        prevEl: ".school-prev" 
+    },
 });
 
-/* --- SCROLL VE FORM İŞLEMLERİ --- */
+/* --- FORM VE SCROLL İŞLEMLERİ --- */
 function selectVolunteer() {
     var contactSection = document.getElementById('contacto');
     if (contactSection) {
@@ -94,11 +103,11 @@ if (form) {
     form.addEventListener("submit", handleSubmit);
 }
 
-/* --- GDPR & ANALYTICS --- */
+/* --- GDPR ANALYTICS --- */
 function loadGoogleAnalytics() {
     var script = document.createElement('script');
     script.async = true;
-    script.src = "https://www.googletagmanager.com/gtag/js?id=G-T48PFFC3TY"; // GA4 ID
+    script.src = "https://www.googletagmanager.com/gtag/js?id=G-T48PFFC3TY"; 
     document.head.appendChild(script);
 
     window.dataLayer = window.dataLayer || [];
@@ -106,7 +115,7 @@ function loadGoogleAnalytics() {
     gtag('js', new Date());
     gtag('config', 'G-T48PFFC3TY'); 
     
-    console.log("GDPR: Kullanıcı izni alındı, Google Analytics başlatıldı. ✅");
+    console.log("GDPR: Analytics Başlatıldı ✅");
 }
 
 document.addEventListener("DOMContentLoaded", function() {
@@ -119,7 +128,7 @@ document.addEventListener("DOMContentLoaded", function() {
     if (userConsent === "accepted") {
         loadGoogleAnalytics();
     } else if (userConsent === "rejected") {
-        console.log("GDPR: Kullanıcı çerezleri reddetti. Analytics engellendi. 🛑");
+        console.log("GDPR: Reddedildi 🛑");
     } else {
         if(cookieBanner) cookieBanner.style.display = "block";
     }
