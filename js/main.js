@@ -145,29 +145,29 @@ document.addEventListener("DOMContentLoaded", function() {
 
 /* --- VİDEO GALERİSİ FONKSİYONLARI --- */
 
-// 1. Video Değiştirme Fonksiyonu
+// 1. Video Değiştirme
 function changeVideo(videoId, title, element) {
-    // Ana iframe'i güncelle
+    // İframe'i güncelle
     var mainFrame = document.getElementById('main-video-frame');
+    // Autoplay ekleyerek video değişince otomatik başlatıyoruz
     mainFrame.src = "https://www.youtube.com/embed/" + videoId + "?autoplay=1&rel=0";
     
     // Başlığı güncelle
     document.getElementById('main-video-title').innerText = title;
 
-    // Aktif sınıfını yönet (Kırmızı çerçeve için)
+    // Aktif sınıfını yönet (Kırmızı çerçeve)
     var thumbs = document.querySelectorAll('.video-thumb');
     thumbs.forEach(t => t.classList.remove('active-thumb'));
     element.classList.add('active-thumb');
 }
 
-// 2. Video Slider Ayarları
+// 2. Video Slider Başlat
 var videoSwiper = new Swiper(".videoSwiper", {
     slidesPerView: 2,
     spaceBetween: 15,
-    scrollbar: {
-        el: ".swiper-scrollbar",
-        hide: false,
-        draggable: true,
+    navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
     },
     breakpoints: {
         640: { slidesPerView: 3 },
