@@ -97,11 +97,11 @@ if (form) {
     form.addEventListener("submit", handleSubmit);
 }
 
-/* --- GDPR ANALYTICS --- */
+/* --- GDPR ANALYTICS (DÜZELTİLDİ) --- */
 function loadGoogleAnalytics() {
     var script = document.createElement('script');
     script.async = true;
-    script.src = "[https://www.googletagmanager.com/gtag/js?id=G-T48PFFC3TY](https://www.googletagmanager.com/gtag/js?id=G-T48PFFC3TY)"; 
+    script.src = "https://www.googletagmanager.com/gtag/js?id=G-T48PFFC3TY"; 
     document.head.appendChild(script);
 
     window.dataLayer = window.dataLayer || [];
